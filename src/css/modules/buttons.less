@@ -1,0 +1,35 @@
+.button {
+    background: none;
+    color: @c-body;
+    border: 2px solid;
+    padding: 10px 20px;
+    outline: none;
+    text-decoration: none;
+    position: relative;
+    border-radius: 10px;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: .8rem;
+    font-weight: 600;
+    .transition;
+    &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #FFF;
+        pointer-events: none;
+        opacity: 0;
+    }
+    &:hover {
+        text-decoration: none;
+        color: #FFF;
+        background-color: @c-main;
+        &:after {
+            opacity: .1;
+        }
+    }
+}
