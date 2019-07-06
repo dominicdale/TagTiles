@@ -18,7 +18,7 @@ header {
         box-shadow: 0 0 30px rgba(0,0,0,.1);
         transform: translateY(-120%);
         z-index: 1;
-        .transition;
+        .transition--long;
     }
 }
 
@@ -26,6 +26,9 @@ header {
     color: @c-body;
     &:before {
         transform: translateY(0);
+    }
+    .logo__path {
+        fill: @c-body;
     }
 }
 
@@ -46,6 +49,6 @@ header {
     margin-right: 50px;
 }
 
-.logo__img {
-
+.logo__path {
+    .transition;
 }

@@ -1,18 +1,20 @@
 .main-banner {
-    min-height: 100vh;
+    height: ~"calc(100vh - @{header-height})";
     background-color: @c-dark;
     background-image: url('../img/header.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: @header-height;
     display: flex;
-    align-items: center;
-    justify-content: center;
     color: #FFF;
 }
 
 .main-banner__container {
     .container;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex: 1;
 }
 
 .main-banner__content {
@@ -20,7 +22,7 @@
 }
 
 .main-banner__title {
-    font-size: 3rem;
+    font-size: 3.5rem;
 }
 
 .main-banner__text {

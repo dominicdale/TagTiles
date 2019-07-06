@@ -1,12 +1,96 @@
 .panel {
     margin: @content-padding;
+    position: relative;
 }
 
+// modifiers
 .panel--padding {
     margin: 0;
     padding: @content-padding;
 }
 
-.panel--grey {
-    background-color: #f7f7f7;
+.panel--process {
+    .panel--padding;
+    background-color: #1C262C;
+    color: #FFF;
+    padding-bottom: 350px;
+}
+
+.panel--recent {
+    .panel--padding;
+    background-color: #171E23;
+    color: #FFF;
+    padding-bottom: 350px;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #171E23;
+        transform: rotate(5deg) scaleX(1.5) scaleY(1.4);
+        z-index: 1;
+    }
+}
+
+.panel--download {
+    .panel--padding;
+    background-color: @c-main;
+    color: #FFF;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: @c-main;
+        transform: rotate(-6deg) scaleX(1.5) scaleY(1.4);
+        z-index: 2;
+    }
+}
+
+// elements
+
+.panel__container {
+    .container;
+}
+
+.panel__row {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 5;
+}
+
+.panel__col {
+    flex: 0 1 50%;
+}
+
+.panel__col--left {
+
+}
+
+.panel__col--right {
+
+}
+
+.panel__heading {
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    font-size: 2.3rem;
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100px;
+        border-bottom: 2px solid @c-main;
+    }
+}
+
+.panel__content {
+    max-width: 400px;
 }
