@@ -18,3 +18,20 @@
 .text-align--left {
     text-align: left;
 }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 5;
+    margin: 0 -@panel-padding;
+}
+
+.row--reverse {
+    flex-direction: row-reverse;
+}
+
+.col {
+    flex: 0 1 ~"calc(50% - @{panel-padding} * 2)";
+    padding: 0 @panel-padding;
+}

@@ -38,6 +38,7 @@
     .panel--padding;
     background-color: @c-main;
     color: #FFF;
+    margin-bottom: 300px;
     &:before {
         content: '';
         position: absolute;
@@ -49,6 +50,11 @@
         transform: rotate(-6deg) scaleX(1.5) scaleY(1.4);
         z-index: 2;
     }
+    .panel__heading {
+        &:after {
+            border-color: #FFF;
+        }
+    }
 }
 
 // elements
@@ -58,14 +64,15 @@
 }
 
 .panel__row {
-    display: flex;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 5;
+    .row;
+}
+
+.panel__row--reverse {
+    .row--reverse;
 }
 
 .panel__col {
-    flex: 0 1 50%;
+    .col;
 }
 
 .panel__col--left {
@@ -93,4 +100,7 @@
 
 .panel__content {
     max-width: 400px;
+    b {
+        display: block;
+    }
 }

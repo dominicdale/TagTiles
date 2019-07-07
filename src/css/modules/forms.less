@@ -1,3 +1,37 @@
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.input-group__row {
+    display: flex;
+    .input-group {
+        flex: 0 1 50%;
+        margin: 0 10px;
+    }
+}
+
+.input-group__label {
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: .6rem;
+    margin-bottom: 10px;
+}
+
+.input-group__input {
+    flex: 1;
+    border: 0;
+    padding: 10px 20px;
+    border-radius: 4px;
+    background-color: #FFF;
+    &::placeholder {
+        color: #eee;
+    }
+}
+
 .select-container {
     width: 100%;
     position: relative;
