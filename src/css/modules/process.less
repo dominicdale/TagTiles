@@ -1,0 +1,43 @@
+.process__container {
+
+}
+
+.process__item {
+    display: block;
+    font-size: 4rem;
+    font-weight: 800;
+    color: #FFF;
+    text-transform: uppercase;
+    line-height: .9;
+    cursor: pointer;
+    user-select: none;
+}
+
+.process__item--active {
+    color: @c-main;
+}
+
+.process__description-container {
+    position: relative;
+    min-height: 300px;
+}
+
+.process__description {
+    // display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transform: translateY(-30px);
+    visibility: hidden;
+    pointer-events: none;
+    .transition;
+}
+
+.process__description--active {
+    // display: block;
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+    pointer-events: all;
+}

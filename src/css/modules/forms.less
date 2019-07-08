@@ -1,3 +1,18 @@
+input, textarea {
+    border: 0;
+    padding: 10px;
+    border-radius: 4px;
+    background-color: #FFF;
+    outline: none;
+    flex: 1;
+    &::placeholder {
+        color: rgb(163, 163, 163);
+    }
+}
+textarea {
+    min-height: 100px;
+}
+
 .input-group {
     display: flex;
     flex-wrap: wrap;
@@ -6,6 +21,7 @@
 
 .input-group__row {
     display: flex;
+    margin: 0 -10px 10px;
     .input-group {
         flex: 0 1 50%;
         margin: 0 10px;
@@ -22,14 +38,7 @@
 }
 
 .input-group__input {
-    flex: 1;
-    border: 0;
-    padding: 10px 20px;
-    border-radius: 4px;
-    background-color: #FFF;
-    &::placeholder {
-        color: #eee;
-    }
+
 }
 
 .select-container {

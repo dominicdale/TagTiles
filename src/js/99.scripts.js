@@ -25,6 +25,18 @@ $(function () {
     });
 
 
+    /* ==== Process panel ==== */
+    $('.process__item').click(function(){
+        process_id = $(this).data('id');
+        process_description = $(this).closest('.panel--process').find('.process__description');
+
+        process_description.removeClass('process__description--active');
+
+        process_description + $('#'+process_id).addClass('process__description--active');
+
+    })
+
+
 });
 
 
