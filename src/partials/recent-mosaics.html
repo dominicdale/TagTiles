@@ -1,13 +1,27 @@
 <section class="panel panel--recent">
-        <div class="panel__container">
-            <div class="panel__row">
-                <div class="panel__col panel__col--left">
-                    <h2 class="panel__heading">Recent mosaics</h2>
-                    <p class="panel__content">Our dedicated cloud based servers scrape Instagram for your event hashtag and capture the images.</p>
-                </div>
-                <div class="panel__col panel__col--right">
-                    
+    <div class="panel__container">
+        <div class="panel__row">
+            <div class="panel__col panel__col--left">
+                <h2 class="panel__heading">Recent mosaics</h2>
+                <p class="panel__content">Our dedicated cloud based servers scrape Instagram for your event hashtag and capture the images.</p>
+            </div>
+            <div class="panel__col panel__col--right">
+                <div class="gallery">
+                    <img src="./img/a1.jpg" data-img="./img/stock1.jpg" class="gallery__item gallery__item--large" />
+                    <img src="./img/a2.jpg" data-img="./img/stock2.jpg" class="gallery__item gallery__item--top" />
+                    <img src="./img/a3.jpg" class="gallery__item gallery__item--bottom" />
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+<section class="gallery-overlay">
+    <span class="gallery-overlay__close">close</span>
+    <div class="gallery-overlay__sidebar">
+
+    </div>
+    <div class="gallery-overlay__img-container">
+        <img src="./img/a1.jpg" class="gallery-overlay__img" />
+    </div>
+</section>

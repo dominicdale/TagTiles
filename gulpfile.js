@@ -14,6 +14,7 @@ var cacheBuster = require('gulp-cache-bust');
 var htmlPartial = require('gulp-html-partial');
 var cat  = require('gulp-cat');
 const htmlmin = require('gulp-htmlmin');
+var smushit = require('gulp-smushit');
 var autoprefixerOptions = {
   browsers: ['Firefox < 20', 'ie 8-11', 'iOS 7', 'last 2 Chrome versions']
 };
@@ -83,6 +84,13 @@ gulp.task('partial', function () {
     .pipe(browserSync.reload({
       stream: true
     }))
+});
+
+
+gulp.task('image', function () {
+  return gulp.src('./src/img/*.{jpg,png}')
+      .pipe(smushit())
+      .pipe(gulp.dest('./dist/img'));
 });
 
 

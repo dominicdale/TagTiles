@@ -34,14 +34,35 @@ $(function () {
 
         process_description + $('#'+process_id).addClass('process__description--active');
 
-    })
+    });
+
+
+    /* ==== Recent mosaics ==== */
+    gallery_img = $('.gallery-overlay .gallery-overlay__img');
+
+    $('.gallery__item').click(function(){
+        img_src = $(this).data('img');
+
+        $('.gallery-overlay').toggleClass('gallery-overlay--show');
+        gallery_img.attr('src', img_src).one('load', function(){
+            setTimeout(function() {
+                gallery_img.addClass('gallery-overlay__img--loaded');
+               }, 1000);
+        });
+    });
+
+    $('.gallery-overlay__close').click(function(){
+        $('.gallery-overlay').removeClass('gallery-overlay--show');
+        gallery_img.removeClass('gallery-overlay__img--loaded');
+        
+    });
 
 
 });
 
 
 
-$(window).on('load', function () {
+$(window).on('load resize', function () {
 
     // Remove loading window
     setTimeout(function () {
