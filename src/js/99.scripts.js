@@ -14,7 +14,7 @@ $(function () {
 
 
     /* ==== Add background to header on scroll ==== */
-    $(window).scroll(function () {
+    $(window).on('load scroll', function () {
         var scroll = $(window).scrollTop();
 
         if (scroll >= 5) {
@@ -28,10 +28,13 @@ $(function () {
     /* ==== Process panel ==== */
     $('.process__item').click(function(){
         process_id = $(this).data('id');
+        process_item = $(this).closest('.panel--process').find('.process__item');
         process_description = $(this).closest('.panel--process').find('.process__description');
 
-        process_description.removeClass('process__description--active');
+        process_item.removeClass('process__item--active');
+        $(this).toggleClass('process__item--active');
 
+        process_description.removeClass('process__description--active');
         process_description + $('#'+process_id).addClass('process__description--active');
 
     });

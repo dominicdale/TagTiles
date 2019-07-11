@@ -13,14 +13,14 @@
     .panel--padding;
     background-color: #1C262C;
     color: #FFF;
-    padding-bottom: 350px;
+    padding-bottom: 250px;
 }
 
 .panel--recent {
     .panel--padding;
     background-color: #171E23;
     color: #FFF;
-    padding-bottom: 350px;
+    padding-bottom: 250px;
     &:before {
         content: '';
         position: absolute;
@@ -29,27 +29,40 @@
         bottom: 0;
         left: 0;
         background-color: #171E23;
-        transform: rotate(5deg) scaleX(1.5) scaleY(1.4);
+        transform: rotate(5deg) scaleX(1.5) scaleY(1.5);
         z-index: 1;
     }
 }
 
 .panel--download {
     .panel--padding;
-    background-color: @c-main;
+    // background-color: @c-main;
     color: #FFF;
     margin-bottom: 300px;
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        background-color: @c-main;
-        transform: rotate(-6deg) scaleX(1.5) scaleY(1.4);
-        z-index: 2;
-    }
+    // &:before {
+    //     content: '';
+    //     position: absolute;
+    //     top: 0;
+    //     right: 0;
+    //     bottom: 0;
+    //     left: 0;
+    //     background-color: @c-main;
+    //     transform: rotate(-6deg) scaleX(1.5) scaleY(1.1);
+    //     z-index: 2;
+    // }
+    // &:after {
+    //     content: '';
+    //     background-image: url(../img/iphonex.png);
+    //     background-repeat: no-repeat;
+    //     width: 800px;
+    //     height: 600px;
+    //     display: block;
+    //     position: absolute;
+    //     bottom: -73px;
+    //     left: 0;
+    //     z-index: 5;
+    //     transform: rotate(-6deg);
+    // }
     .panel__heading {
         &:after {
             border-color: #FFF;
@@ -71,6 +84,10 @@
     .row--reverse;
 }
 
+.panel__row--align-right {
+    justify-content: flex-end;
+}
+
 .panel__col {
     .col;
 }
@@ -80,6 +97,10 @@
 }
 
 .panel__col--right {
+
+}
+
+.panel__col--offset-right {
 
 }
 
@@ -103,4 +124,36 @@
     b {
         display: block;
     }
+}
+
+
+// download panel
+.download-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    transform: rotate(-6deg);
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: @c-main;
+        transform: scaleX(1.5);
+        z-index: 2;
+    }
+}
+
+.download-bg__phone {
+    display: block;
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
 }
