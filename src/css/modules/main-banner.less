@@ -1,5 +1,5 @@
 .main-banner {
-    height: ~"calc(100vh - @{header-height})";
+    min-height: ~"calc(100vh + @{process-offset})";
     background-color: @c-dark;
     background-image: url('../img/header.jpg');
     background-repeat: no-repeat;
@@ -31,7 +31,9 @@
 }
 
 .main-banner__content {
-
+    opacity: 0;
+    .transition--long;
+    transition-delay: .7s;
 }
 
 .main-banner__title {

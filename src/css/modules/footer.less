@@ -1,7 +1,20 @@
 footer {
-    background-color: #171E23;
+    background-color: @c-dark;
     color: #FFF;
-    padding: 50px 0 0;
+    padding: 100px 0 0;
+    position: relative;
+    margin-top: 200px;
+    &:before {
+        content: '';
+        position: absolute;
+        top: -10%;
+        right: 0;
+        left: 0;
+        height: 50%;
+        background-color: @c-dark;
+        transform: scaleX(2) rotate(6deg);
+        z-index: -1;
+    }
 }
 
 .footer__container {
@@ -14,6 +27,19 @@ footer {
 
 .footer__col {
     .col;
+}
+
+.footer__text, .footer__link {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 800;
+    display: block;
+    line-height: .9;
+    letter-spacing: -1px;
+}
+
+.footer__link {
+
 }
 
 .footer__sub {

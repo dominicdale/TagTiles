@@ -28,6 +28,7 @@
     "pump": "^1.0.2"
   },
   "dependencies": {
-    "gulp-cache-bust": "^1.3.0"
+    "gulp-cache-bust": "^1.3.0",
+    "gulp-inline": "^0.1.3"
   }
 }

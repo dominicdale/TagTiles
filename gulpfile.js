@@ -15,6 +15,7 @@ var htmlPartial = require('gulp-html-partial');
 var cat  = require('gulp-cat');
 const htmlmin = require('gulp-htmlmin');
 var smushit = require('gulp-smushit');
+var inline = require('gulp-inline')
 var autoprefixerOptions = {
   browsers: ['Firefox < 20', 'ie 8-11', 'iOS 7', 'last 2 Chrome versions']
 };
@@ -53,25 +54,6 @@ gulp.task('js', function () {
 });
 
 
-// // cacheBuster Less
-// gulp.task('cacheLess', ['less'], function () {
-//   return gulp.src('./dist/index.html')
-//     .pipe(cacheBuster({
-//       type: 'timestamp'
-//     }))
-//     .pipe(gulp.dest('./'));
-// });
-
-
-// // cacheBuster JS
-// gulp.task('cacheJS', ['js'], function () {
-//   return gulp.src('./dist/index.html')
-//     .pipe(cacheBuster({
-//       type: 'timestamp'
-//     }))
-//     .pipe(gulp.dest('./'));
-// });
-
 
 // Partial
 gulp.task('partial', function () {
@@ -87,12 +69,17 @@ gulp.task('partial', function () {
 });
 
 
-gulp.task('image', function () {
-  return gulp.src('./src/img/*.{jpg,png}')
-      .pipe(smushit())
-      .pipe(gulp.dest('./dist/img'));
+// gulp inline
+gulp.task('inline', ['partial'], function(){
+  gulp.src('./dist/index.html')
+    .pipe(inline({
+      base: './',
+      // js: uglify,
+      // css: [autoprefixer({ browsers:['last 2 versions'] })],
+      disabledTypes: ['img', 'js'], // Only inline css files
+    }))
+    .pipe(gulp.dest('./dist/'));
 });
-
 
 
 // browser reload

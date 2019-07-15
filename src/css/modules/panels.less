@@ -14,6 +14,17 @@
     background-color: #1C262C;
     color: #FFF;
     padding-bottom: 250px;
+    &:before {
+        content: '';
+        position: absolute;
+        top: -@process-offset;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: #1C262C;
+        transform: rotate(-3deg) scaleX(1.5);
+        z-index: 1;
+    }
 }
 
 .panel--recent {
@@ -29,46 +40,43 @@
         bottom: 0;
         left: 0;
         background-color: #171E23;
-        transform: rotate(5deg) scaleX(1.5) scaleY(1.5);
+        transform: rotate(0deg) scaleX(1.5) scaleY(1.5);
         z-index: 1;
+        .transition--long;
     }
 }
 
 .panel--download {
     .panel--padding;
-    // background-color: @c-main;
     color: #FFF;
-    margin-bottom: 300px;
-    // &:before {
-    //     content: '';
-    //     position: absolute;
-    //     top: 0;
-    //     right: 0;
-    //     bottom: 0;
-    //     left: 0;
-    //     background-color: @c-main;
-    //     transform: rotate(-6deg) scaleX(1.5) scaleY(1.1);
-    //     z-index: 2;
-    // }
-    // &:after {
-    //     content: '';
-    //     background-image: url(../img/iphonex.png);
-    //     background-repeat: no-repeat;
-    //     width: 800px;
-    //     height: 600px;
-    //     display: block;
-    //     position: absolute;
-    //     bottom: -73px;
-    //     left: 0;
-    //     z-index: 5;
-    //     transform: rotate(-6deg);
-    // }
+    margin-bottom: 200px;
     .panel__heading {
         &:after {
             border-color: #FFF;
         }
     }
 }
+
+
+// animate {
+    .panel--animating {
+        &+.panel--recent {
+            &:before {
+                transform: rotate(5deg) scaleX(1.5) scaleY(1.5);
+            }
+        }
+        .download-bg {
+            transform: rotate(-6deg);
+        }
+        .download-bg__phone {
+            transform: rotate(7deg);
+        }
+        .panel__heading {
+            &:after {
+                transform: scaleX(1);
+            }
+        }
+    }
 
 // elements
 
@@ -116,6 +124,9 @@
         bottom: 0;
         width: 100px;
         border-bottom: 2px solid @c-main;
+        .transition--long;
+        transform-origin: left;
+        transform: scaleX(0);
     }
 }
 
@@ -135,7 +146,9 @@
     bottom: 0;
     left: 0;
     z-index: 5;
-    transform: rotate(-6deg);
+    // transform: rotate(-6deg);
+    .transition--long;
+    // overflow-x: hidden;
     &:before {
         content: '';
         position: absolute;
@@ -147,6 +160,16 @@
         transform: scaleX(1.5);
         z-index: 2;
     }
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -150px;
+        left: -100px;
+        right: -100px;
+        height: 150px;
+        background-color: #FFF;
+        z-index: 10;
+    }
 }
 
 .download-bg__phone {
@@ -155,5 +178,6 @@
     position: absolute;
     bottom: 0;
     left: 0;
-
+    transform: rotate(20deg);
+    .transition--long;
 }

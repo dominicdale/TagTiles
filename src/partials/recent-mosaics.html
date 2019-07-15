@@ -1,15 +1,15 @@
 <section class="panel panel--recent">
     <div class="panel__container">
         <div class="panel__row">
-            <div class="panel__col panel__col--left">
+            <div class="panel__col panel__col--content">
                 <h2 class="panel__heading">Recent mosaics</h2>
                 <p class="panel__content">Our dedicated cloud based servers scrape Instagram for your event hashtag and capture the images.</p>
             </div>
-            <div class="panel__col panel__col--right">
+            <div class="panel__col">
                 <div class="gallery">
-                    <img src="./img/a1.jpg" data-img="./img/stock1.jpg" class="gallery__item gallery__item--large" />
-                    <img src="./img/a2.jpg" data-img="./img/stock2.jpg" class="gallery__item gallery__item--top" />
-                    <img src="./img/a3.jpg" class="gallery__item gallery__item--bottom" />
+                    <img data-src="./img/a1.jpg" data-img="./img/stock1.jpg" data-title="roflcopter" data-content="lol" class="gallery__item gallery__item--large" />
+                    <img data-src="./img/a2.jpg" data-img="./img/stock2.jpg" class="gallery__item gallery__item--top" />
+                    <img data-src="./img/a3.jpg" class="gallery__item gallery__item--bottom" />
                 </div>
             </div>
         </div>
@@ -17,11 +17,14 @@
 </section>
 
 <section class="gallery-overlay">
-    <span class="gallery-overlay__close">close</span>
+    <span class="gallery-overlay__close icon-x"></span>
     <div class="gallery-overlay__sidebar">
-
+        <div class="gallery-overlay__sidebar-padding">
+            <h3 class="gallery-overlay__sidebar-title"></h3>
+            <p class="gallery-overlay__sidebar-content"></p>
+        </div>
     </div>
     <div class="gallery-overlay__img-container">
-        <img src="./img/a1.jpg" class="gallery-overlay__img" />
+        <img src="" class="gallery-overlay__img" />
     </div>
 </section>
