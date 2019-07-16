@@ -1,12 +1,16 @@
 .panel {
     margin: @content-padding;
     position: relative;
+    outline: none;
 }
 
 // modifiers
 .panel--padding {
     margin: 0;
     padding: @content-padding;
+    @media @mobile {
+        padding: 50px 0;
+    }
 }
 
 .panel--process {
@@ -127,13 +131,21 @@
         .transition--long;
         transform-origin: left;
         transform: scaleX(0);
+        @media @tablet {
+            left: 50%;
+            margin-left: -50px;
+        }
     }
 }
 
 .panel__content {
     max-width: 400px;
+    @media @tablet {
+        margin: 0 auto;
+    }
     b {
         display: block;
+        font-weight: 600;
     }
 }
 

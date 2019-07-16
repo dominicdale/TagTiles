@@ -1,13 +1,16 @@
 .main-banner {
     min-height: ~"calc(100vh + @{process-offset})";
     background-color: @c-dark;
-    background-image: url('../img/header.jpg');
+    background-image: url('img/header.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: @header-height;
     display: flex;
     color: #FFF;
     position: relative;
+    @media @tablet {
+        min-height: 80vh;
+    }
     &:after {
         content: '';
         position: absolute;
@@ -28,12 +31,19 @@
     flex: 1;
     z-index: 2;
     position: relative;
+    @media @tablet {
+        justify-content: center;
+    }
 }
 
 .main-banner__content {
     opacity: 0;
     .transition--long;
     transition-delay: .7s;
+    margin-top: -@process-offset;
+    @media @tablet {
+        text-align: center;
+    }
 }
 
 .main-banner__title {

@@ -10,11 +10,13 @@ $(function () {
 
     $('.panel__col--content').paroller({
         factor: 0.07,
+        factorSm: 0,  
         type: 'foreground',
     });
 
     $('.download-bg__phone').paroller({
         factor: 0.07,
+        factorSm: 0,  
         type: 'foreground',
     });
 

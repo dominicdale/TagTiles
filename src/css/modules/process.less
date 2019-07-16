@@ -23,6 +23,9 @@
     cursor: pointer;
     user-select: none;
     .transition;
+    @media @mobile {
+        font-size: 3rem;
+    }
 }
 
 .process__item--active {
@@ -41,7 +44,7 @@
     top: 0;
     left: 0;
     opacity: 0;
-    transform: translateY(-30px);
+    transform: translateY(-20px);
     visibility: hidden;
     pointer-events: none;
     .transition;
@@ -53,4 +56,5 @@
     transform: translateY(0);
     visibility: visible;
     pointer-events: all;
+    transition-delay: .4s;
 }

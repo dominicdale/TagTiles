@@ -70,7 +70,7 @@ gulp.task('partial', function () {
 
 
 // gulp inline
-gulp.task('inline', ['partial'], function(){
+gulp.task('inline', function(){
   gulp.src('./dist/index.html')
     .pipe(inline({
       base: './',
@@ -104,3 +104,4 @@ gulp.task('watch', ['browserSync'], function () {
 
 // Default task
 gulp.task('default', ['less', 'js', 'partial', 'watch']);
+gulp.task('minify', ['inline']);

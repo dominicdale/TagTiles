@@ -1,12 +1,38 @@
 nav {
-
+    @media @tablet {
+        display: none;
+    }
 }
 
 .nav__item {
     color: inherit;
     text-decoration: none;
-    margin-right: 20px;
+    margin-right: 25px;
+    position: relative;
+    text-transform: lowercase;
+    font-size: .9rem;
+    font-weight: 600;
     &:last-of-type {
         margin-right: 0;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        bottom: -5px;
+        left: 0;
+        border-bottom: 2px solid @c-main;
+        transform: scaleX(0);
+        transform-origin: left;
+        .transition;
+    }
+    &:hover {
+        .nav__item--active;
+    }
+}
+
+.nav__item--active {
+    &:after {
+        transform: scaleX(1);
     }
 }

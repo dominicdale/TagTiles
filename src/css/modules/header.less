@@ -5,10 +5,8 @@ header {
     right: 0;
     min-height: @header-height;
     z-index: 100;
-    // transform: translateY(-100%);
     opacity: 0;
     .transition--long;
-    // transition-delay: .5s;
     &:before {
         content: '';
         position: absolute;
@@ -51,11 +49,14 @@ header {
     &:after {
         content: '';
         position: absolute;
-        right: 0;
+        right: 30px;
         bottom: 0;
-        left: 0;
+        left: 30px;
         border-bottom: 1px solid #FFF;
         .transition;
+        @media @tablet {
+            display: none;
+        }
     }
 }
 
@@ -81,6 +82,10 @@ header {
 
 .social-icon {
     color: #FFF;
+    .transition;
+    &:hover {
+        color: @c-main;
+    }
 }
 
 .icon-mail {
