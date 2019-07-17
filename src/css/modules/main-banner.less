@@ -1,7 +1,9 @@
 .main-banner {
-    min-height: ~"calc(100vh + @{process-offset})";
+    // min-height: ~"calc(100vh + @{process-offset})";
+    // min-height: ~"calc(100vh - @{process-offset})";
+    min-height: 80vh;
     background-color: @c-dark;
-    background-image: url('img/header.jpg');
+    background-image: url('../img/header.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: @header-height;
@@ -40,7 +42,7 @@
     opacity: 0;
     .transition--long;
     transition-delay: .7s;
-    margin-top: -@process-offset;
+    margin-top: -@header-height;
     @media @tablet {
         text-align: center;
     }

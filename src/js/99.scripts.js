@@ -95,8 +95,10 @@ $(function () {
     $('.gallery-overlay__close').click(function(){
         $('.gallery-overlay').removeClass('gallery-overlay--show');
         gallery_img.removeClass('gallery-overlay__img--loaded');
-        gallery_title.html('');
-        gallery_content.html('');
+        setTimeout(function() {
+            gallery_title.html('');
+            gallery_content.html('');
+        }, 1000);
     });
 
 

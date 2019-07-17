@@ -18,7 +18,7 @@ $('a[href*="#"]')
         // Only prevent default if animation is actually gonna happen
         event.preventDefault();
         $('html, body').animate({
-          scrollTop: target.offset().top
+          scrollTop: target.offset().top - 105
         }, 1000, function() {
           // Callback after animation
           // Must change focus!
@@ -40,7 +40,7 @@ $('a[href*="#"]')
   $(window).scroll(function () {
     var position = window.pageYOffset;
     $('section').each(function () {
-      var target = $(this).offset().top();
+      var target = $(this).offset().top - 200;
       var id = $(this).attr('id');
       var navLinks = $('#nav a');
       if (position >= target) {
