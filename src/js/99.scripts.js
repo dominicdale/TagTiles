@@ -1,4 +1,10 @@
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+  }
+
+
 $(function () {
+
 
     /* ==== init ====*/     
     ScrollReveal().reveal('.panel', {
@@ -20,9 +26,9 @@ $(function () {
         type: 'foreground',
     });
 
-    $('.main-banner').paroller({
+    $('.main-banner__media').paroller({
         factor: 0.1,
-        type: 'background',
+        type: 'foreground',
         transition: 'transform 0.3s ease'
     });
 
@@ -61,9 +67,13 @@ $(function () {
         process_id = $(this).data('id');
         process_item = $(this).closest('.panel--process').find('.process__item');
         process_description = $(this).closest('.panel--process').find('.process__description');
+        process_line = $('.process__line');
 
         process_item.removeClass('process__item--active');
         $(this).toggleClass('process__item--active');
+
+        process_line.css('top', $(this).position().top);
+        process_line.css('height', $(this).height());
 
         process_description.removeClass('process__description--active');
         process_description + $('#'+process_id).addClass('process__description--active');

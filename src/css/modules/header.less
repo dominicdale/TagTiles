@@ -5,8 +5,9 @@ header {
     right: 0;
     min-height: @header-height;
     z-index: 100;
-    opacity: 0;
+    transform: translateY(-100%);
     .transition--long;
+    transition-delay: .5s;
     &:before {
         content: '';
         position: absolute;

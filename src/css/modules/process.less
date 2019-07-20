@@ -1,6 +1,16 @@
 .process__container {
     position: relative;
+
 }
+
+.process__line {
+    position: absolute;
+    // top: 10px;
+    left: -20px;
+    border-right: 2px solid rgba(255,255,255,.5);
+    .transition;
+}
+
 
 .process__title {
     position: absolute;
@@ -31,7 +41,7 @@
 
 .process__item--active {
     color: @c-main;
-    transform: translateX(10px);
+    // transform: translateX(10px);
 }
 
 .process__description-container {

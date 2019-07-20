@@ -3,7 +3,7 @@
     // min-height: ~"calc(100vh - @{process-offset})";
     min-height: 80vh;
     background-color: @c-dark;
-    background-image: url('../img/header.jpg');
+    // background-image: url('../img/header.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     padding-top: @header-height;
@@ -25,13 +25,26 @@
     }
 }
 
+.main-banner__media {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    object-fit: cover;
+    // z-index: 1;
+    opacity: 0;
+    transition-delay: 2s;
+    .transition--long;
+}
+
 .main-banner__container {
     .container;
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex: 1;
-    z-index: 2;
+    z-index: 3;
     position: relative;
     @media @tablet {
         justify-content: center;

@@ -1,0 +1,43 @@
+.download-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    // transform: rotate(-6deg);
+    .transition--long;
+    // overflow-x: hidden;
+    &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: @c-main;
+        transform: scaleX(1.5);
+        z-index: 2;
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: -150px;
+        left: -100px;
+        right: -100px;
+        height: 150px;
+        background-color: #FFF;
+        z-index: 10;
+    }
+}
+
+.download-bg__phone {
+    display: block;
+    z-index: 5;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    margin-left: -800px;
+    transform: rotate(20deg);
+    .transition--long;
+}
