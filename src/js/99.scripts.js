@@ -32,11 +32,6 @@ $(function () {
         transition: 'transform 0.3s ease'
     });
 
-    var lazyLoadInstance = new LazyLoad({
-        elements_selector: 'img',
-        class_loading: 'img--loading'
-    });
-
     /* ==== Mobile nav ==== */
     $('.nav__icon').click(function () {
         $(this).toggleClass('nav__icon--active');
@@ -141,5 +136,10 @@ $(window).on('load resize', function () {
     if ($(window).width() <= 480) {
         $('body').addClass('breakpoint--mobile');
     }
+
+    var lazyLoadInstance = new LazyLoad({
+        elements_selector: 'img',
+        class_loading: 'img--loading'
+    });
 
 });
