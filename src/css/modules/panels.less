@@ -18,6 +18,9 @@
     background-color: #1C262C;
     color: #FFF;
     padding-bottom: 30vh;
+    @media @tablet {
+        padding: 10vh 0 20vh;
+    }
     &:before {
         content: '';
         position: absolute;
@@ -37,6 +40,9 @@
     background-color: #171E23;
     color: #FFF;
     padding-bottom: 250px;
+    @media @tablet {
+        padding-top: 10vh;
+    }
     &:before {
         content: '';
         position: absolute;
@@ -63,29 +69,43 @@
     }
 }
 
-
-// animate {
-    .panel--animating {
-        &.panel--recent {
-            &:before {
-                transform: rotate(5deg) scaleX(1.5) scaleY(1.5);
-            }
-        }
-        .download-bg {
-            transform: rotate(-6deg);
-        }
-        .download-bg__phone {
-            transform: rotate(7deg);
-        }
-        .panel__heading {
+.panel--5050 {
+    @media @tablet {
+        margin: 10vh 0;
+        .panel__content, .panel__heading {
+            text-align: left;
+            max-width: 400px;
             &:after {
-                transform: scaleX(1);
+                left: 0;
+                margin: 0;
             }
         }
     }
+}
+
+
+// animate {
+.panel--animating {
+    &.panel--recent {
+        &:before {
+            transform: rotate(5deg) scaleX(1.5) scaleY(1.5);
+        }
+    }
+    .download-bg {
+        transform: rotate(-6deg);
+    }
+    .download-bg__phone {
+        transform: rotate(7deg);
+    }
+    .panel__heading {
+        &:after {
+            transform: scaleX(1);
+        }
+    }
+}
+
 
 // elements
-
 .panel__container {
     .container;
 }
@@ -106,23 +126,12 @@
     .col;
 }
 
-.panel__col--left {
-
-}
-
-.panel__col--right {
-
-}
-
-.panel__col--offset-right {
-
-}
 
 .panel__heading {
     position: relative;
     padding-bottom: 20px;
-    margin-bottom: 20px;
     font-size: 2.3rem;
+    margin: 0 auto 20px;
     &:after {
         content: '';
         position: absolute;

@@ -37,7 +37,31 @@
     position: absolute;
     bottom: 0;
     left: 50%;
-    margin-left: -800px;
+    // margin-left: -800px;
+    margin-left: -56vw;
     transform: rotate(20deg);
     .transition--long;
+}
+
+.download__buttons {
+    display: flex;
+    margin-top: 40px;
+}
+
+.download__button {
+    width: 148px;
+    height: 50px;
+    background-size: 100%;
+    margin-right: 15px;
+    &:last-of-type {
+        margin-right: 0;
+    }
+}
+
+.download__button--apple {
+    background-image: url('../img/AppStore.svg');
+}
+
+.download__button--google {
+    background-image: url('../img/PlayStore.svg');  
 }
