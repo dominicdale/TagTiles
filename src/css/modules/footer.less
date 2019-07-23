@@ -7,13 +7,14 @@ footer {
     &:before {
         content: '';
         position: absolute;
-        top: -10%;
+        top: 0;
         right: 0;
         left: 0;
         height: 50%;
         background-color: @c-dark;
-        transform: scaleX(2) rotate(6deg);
+        // transform: scaleX(2) rotate(6deg) translateY(-20%);
         z-index: -1;
+        .transition--long;
     }
     &:focus {
         outline: none;

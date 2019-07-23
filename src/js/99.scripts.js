@@ -7,7 +7,7 @@ $(function () {
 
 
     /* ==== init ====*/     
-    ScrollReveal().reveal('.panel', {
+    ScrollReveal().reveal('.anchor-hitpoint', {
         opacity: 1,
         afterReveal: function (el) {
             el.classList.add('panel--animating');
@@ -22,11 +22,17 @@ $(function () {
             type: 'foreground',
         });
 
-        // $('.download-bg__phone').paroller({
-        //     factor: 0.07,
-        //     factorSm: 0,  
-        //     type: 'foreground',
-        // });
+        $('.download-bg__phone').paroller({
+            factor: 0.07,
+            factorSm: 0,  
+            type: 'foreground',
+        });
+
+        $('.panel__img, .gallery').paroller({
+            factor: 0.2,
+            factorSm: 0,  
+            type: 'foreground',
+        });
 
         $('.main-banner__media').paroller({
             factor: 0.1,

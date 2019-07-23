@@ -19,7 +19,7 @@ $('a[href*="#"]')
         event.preventDefault();
         $('html, body').animate({
           scrollTop: target.offset().top - 105
-        }, 1000, function() {
+        }, 500, function() {
           // Callback after animation
           // Must change focus!
           var $target = $(target);
@@ -39,14 +39,16 @@ $('a[href*="#"]')
 
   $(window).scroll(function () {
     var position = window.pageYOffset;
-    $('.panel').each(function () {
-      var target = $(this).offset().top - 105;
+    $('.anchor-hitpoint').each(function () {
+      var target = $(this).offset().top - 130;
       // var target = $(this).offset().top;
       var id = $(this).attr('id');
       var navLinks = $('#nav a');
       if (position >= target) {
-        navLinks.removeClass('nav__item--active');
-        $('#nav a[href="#' + id + '"]').addClass('nav__item--active');
+        setTimeout(function(){
+          navLinks.removeClass('nav__item--active');
+          $('#nav a[href="#' + id + '"]').addClass('nav__item--active');
+        }, 300)
       }
     });
  });
