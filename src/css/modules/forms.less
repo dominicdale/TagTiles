@@ -22,9 +22,15 @@ textarea {
 .input-group__row {
     display: flex;
     margin: 0 -10px 20px;
+    @media @mobile {
+        display: block;
+    }
     .input-group {
         flex: 0 1 50%;
         margin: 0 10px;
+        @media @mobile {
+            margin: 0 10px 20px;
+        }
     }
 }
 
@@ -36,6 +42,7 @@ textarea {
     font-size: .7rem;
     margin-bottom: 7px;
     opacity: .9;
+    text-align: left;
 }
 
 .input-group__input {

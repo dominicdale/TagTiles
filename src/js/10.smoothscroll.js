@@ -40,7 +40,7 @@ $('a[href*="#"]')
   $(window).scroll(function () {
     var position = window.pageYOffset;
     $('.anchor-hitpoint').each(function () {
-      var target = $(this).offset().top - 130;
+      var target = $(this).offset().top - 300;
       // var target = $(this).offset().top;
       var id = $(this).attr('id');
       var navLinks = $('#nav a');
@@ -51,4 +51,9 @@ $('a[href*="#"]')
         }, 300)
       }
     });
+
+    if($(window).scrollTop() + $(window).height() > $(document).height() - 300) {
+      $('.nav__link').removeClass('nav__item--active');
+      $('.nav__link:last-of-type').addClass('nav__item--active');
+    }
  });

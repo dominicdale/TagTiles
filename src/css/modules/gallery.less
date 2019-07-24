@@ -76,6 +76,10 @@
     min-height: 500px;
     width: 100%;
     flex-wrap: wrap;
+    @media @mobile {
+        height: auto;
+        min-height: auto;
+    }
 }
 
 .gallery-overlay__sidebar {
@@ -95,11 +99,16 @@
         max-width: 300px;
         min-height: 150px;
         width: 100%;
+        text-align: left;
     }
+
 }
 
 .gallery-overlay__sidebar-padding {
     padding: 50px;
+    @media @mobile {
+        padding: 30px;
+    }
 }
 
 .gallery-overlay__sidebar-title {
@@ -107,6 +116,10 @@
     font-size: 1.5rem;
     &:after {
         transform: scaleX(1);
+        @media @mobile {
+            left: 0;
+            margin: 0;
+        }
     }
 }
 

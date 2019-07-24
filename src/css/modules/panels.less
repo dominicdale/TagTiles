@@ -41,7 +41,7 @@
     color: #FFF;
     padding-bottom: 250px;
     @media @tablet {
-        padding-top: 10vh;
+        padding: 10vh 0;
     }
     &:before {
         content: '';
@@ -105,6 +105,9 @@
     &.footer {
         &:before {
             transform: scaleX(2) rotate(6deg) translateY(-30%);
+            @media @mobile {
+                transform: scaleX(2) rotate(6deg) translateY(-10%);
+            }
         }
     }
 }

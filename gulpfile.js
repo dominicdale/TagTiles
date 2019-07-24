@@ -56,7 +56,7 @@ gulp.task('js', function () {
 
 
 // Partial
-gulp.task('partial', function () {
+gulp.task('partial', ['less'], function () {
   gulp.src(['./src/*.html'])
     .pipe(htmlPartial({
       basePath: './src/partials/'
@@ -70,10 +70,10 @@ gulp.task('partial', function () {
 
 
 // gulp inline
-gulp.task('inline', function(){
+gulp.task('inline', ['partial'], function(){
   gulp.src('./dist/index.html')
     .pipe(inline({
-      base: './',
+      base: './dist/',
       // js: uglify,
       // css: [autoprefixer({ browsers:['last 2 versions'] })],
       disabledTypes: ['img', 'js'], // Only inline css files
@@ -103,5 +103,5 @@ gulp.task('watch', ['browserSync'], function () {
 
 
 // Default task
-gulp.task('default', ['less', 'js', 'partial', 'watch']);
+gulp.task('default', ['less', 'js', 'inline', 'watch']);
 gulp.task('minify', ['inline']);

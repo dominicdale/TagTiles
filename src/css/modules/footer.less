@@ -4,6 +4,9 @@ footer {
     padding: 100px 0 0;
     position: relative;
     margin-top: 200px;
+    @media @mobile {
+        margin-top: 100px;
+    }
     &:before {
         content: '';
         position: absolute;
@@ -41,10 +44,16 @@ footer {
     line-height: .9;
     letter-spacing: -1px;
     margin: 0 0 20px;
+    @media @mobile {
+        font-size: 2rem;
+    }
 }
 
 .footer__link {
     font-size: 3rem;
+    @media @mobile {
+        font-size: 1.8rem;
+    }
 }
 
 .footer__sub {

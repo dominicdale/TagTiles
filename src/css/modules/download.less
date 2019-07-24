@@ -41,11 +41,15 @@
     // margin-left: -56vw;
     transform: rotate(20deg);
     .transition--long;
+    transition-delay: .4s;
 }
 
 .download__buttons {
     display: flex;
     margin-top: 40px;
+    @media @tablet {
+        justify-content: center;
+    }
 }
 
 .download__button {
