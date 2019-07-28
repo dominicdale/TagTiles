@@ -32,11 +32,11 @@ $(function () {
         //     type: 'foreground',
         // });
 
-        $('.panel__img, .gallery').paroller({
-            factor: 0.2,
-            factorSm: 0,  
-            type: 'foreground',
-        });
+        // $('.panel__img, .gallery').paroller({
+        //     factor: 0.2,
+        //     factorSm: 0,  
+        //     type: 'foreground',
+        // });
 
         $('.main-banner__media').paroller({
             factor: 0.1,
