@@ -16,13 +16,20 @@ var cat  = require('gulp-cat');
 const htmlmin = require('gulp-htmlmin');
 var smushit = require('gulp-smushit');
 var inline = require('gulp-inline')
+// var webp = require('gulp-webp');
+// var del = require('del');
 var autoprefixerOptions = {
   browsers: ['Firefox < 20', 'ie 8-11', 'iOS 7', 'last 2 Chrome versions']
 };
 
+// clean
+// gulp.task('clean', function () {
+//   return del('dist/index.html');
+// });
+
 
 // less compiler
-gulp.task('less', function () {
+gulp.task('less', ['partial'], function () {
   return gulp.src('./src/css/*.less')
     .pipe(sourcemaps.init())
     .pipe(less({
@@ -56,7 +63,7 @@ gulp.task('js', function () {
 
 
 // Partial
-gulp.task('partial', ['less'], function () {
+gulp.task('partial', function () {
   gulp.src(['./src/*.html'])
     .pipe(htmlPartial({
       basePath: './src/partials/'
@@ -70,16 +77,17 @@ gulp.task('partial', ['less'], function () {
 
 
 // gulp inline
-gulp.task('inline', ['partial'], function(){
-  gulp.src('./dist/index.html')
+gulp.task('inline', ['less'], function(){
+  gulp.src('dist/index.html')
     .pipe(inline({
-      base: './dist/',
+      base: 'dist',
       // js: uglify,
       // css: [autoprefixer({ browsers:['last 2 versions'] })],
       disabledTypes: ['img', 'js'], // Only inline css files
     }))
-    .pipe(gulp.dest('./dist/'));
+    .pipe(gulp.dest('dist/'));
 });
+
 
 
 // browser reload
@@ -94,8 +102,8 @@ gulp.task('browserSync', function () {
 
 // Watch
 gulp.task('watch', ['browserSync'], function () {
-  gulp.watch('./src/css/modules/*.less', ['less']);
-  gulp.watch('./src/css/*.less', ['less']);
+  gulp.watch('./src/css/modules/*.less', ['inline']);
+  gulp.watch('./src/css/*.less', ['inline']);
   gulp.watch('./src/js/*.js', ['js']);
   gulp.watch('./src/**/*.html', ['partial']);
 });
@@ -103,5 +111,6 @@ gulp.task('watch', ['browserSync'], function () {
 
 
 // Default task
-gulp.task('default', ['less', 'js', 'inline', 'watch']);
+// gulp.task('default', ['less', 'js', 'partial',  'watch']);
+gulp.task('default', ['js', 'inline', 'watch']);
 gulp.task('minify', ['inline']);

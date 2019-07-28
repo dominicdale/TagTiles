@@ -44,6 +44,12 @@
     @media @tablet {
         flex-direction: column;
     }
+    @media @mobile {
+        top: 30px;
+        right: 30px;
+        bottom: 30px;
+        left: 30px;
+    }
     &:before {
         content: '';
         position: fixed;
@@ -101,12 +107,15 @@
         width: 100%;
         text-align: left;
     }
+    @media @mobile {
+        max-width: none;
+    }
 
 }
 
 .gallery-overlay__sidebar-padding {
     padding: 50px;
-    @media @mobile {
+    @media @tablet {
         padding: 30px;
     }
 }
@@ -116,7 +125,7 @@
     font-size: 1.5rem;
     &:after {
         transform: scaleX(1);
-        @media @mobile {
+        @media @tablet {
             left: 0;
             margin: 0;
         }
@@ -140,6 +149,7 @@
     // transition-delay: .3s;
     @media @tablet {
         flex: 1 0 100%;
+        min-height: 300px;
     }
     &:after {
         content: '';

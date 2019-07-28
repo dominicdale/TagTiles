@@ -4,7 +4,7 @@ footer {
     padding: 100px 0 0;
     position: relative;
     margin-top: 200px;
-    @media @mobile {
+    @media @tablet {
         margin-top: 100px;
     }
     &:before {
@@ -15,9 +15,12 @@ footer {
         left: 0;
         height: 50%;
         background-color: @c-dark;
-        // transform: scaleX(2) rotate(6deg) translateY(-20%);
+        transform: scaleX(2) rotate(6deg) translateY(-30%);
         z-index: -1;
         .transition--long;
+        @media @tablet {
+            transform: scaleX(2) rotate(6deg) translateY(-10%);
+        }
     }
     &:focus {
         outline: none;

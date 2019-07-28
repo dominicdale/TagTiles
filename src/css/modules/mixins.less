@@ -34,6 +34,8 @@
 .col {
     flex: 0 1 ~"calc(50% - @{panel-padding} * 2)";
     padding: 0 @panel-padding;
+    .transition--long !important;
+    // opacity: 0;
     @media @tablet {
         flex: 0 1 100%;
         margin: 20px 0;

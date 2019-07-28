@@ -14,6 +14,10 @@ $(function () {
         }
     });
 
+    ScrollReveal().reveal('.panel__col, .footer__col, .download-bg__phone', {
+        opacity: 0
+    });
+
     if ($(window).width() >= 769) {
 
         $('.panel__col--content').paroller({
@@ -22,11 +26,11 @@ $(function () {
             type: 'foreground',
         });
 
-        $('.download-bg__phone').paroller({
-            factor: 0.07,
-            factorSm: 0,  
-            type: 'foreground',
-        });
+        // $('.download-bg__phone').paroller({
+        //     factor: 0.07,
+        //     factorSm: 0,  
+        //     type: 'foreground',
+        // });
 
         $('.panel__img, .gallery').paroller({
             factor: 0.2,
@@ -131,7 +135,7 @@ $(window).on('load resize', function () {
     setTimeout(function () {
         $('.loading-overlay').addClass('loading-overlay--hide');
         $('body').addClass('body--loaded');
-    }, 500);
+    }, 200);
 
 
     // Add class if edge
